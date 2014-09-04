@@ -10,9 +10,13 @@ import com.neosavvy.Tick
 object Altimeter {
   case class RateChange( amount : Float )
   case class AltitudeUpdate( amount : Double )
+
+  def apply() = new Altimeter with ProductionEventSource
 }
 
-class Altimeter extends Actor with ActorLogging with EventSource {
+class Altimeter extends Actor with ActorLogging {
+  this : EventSource =>
+
   import Altimeter._
 
   implicit val ec = context.dispatcher
