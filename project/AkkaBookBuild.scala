@@ -11,7 +11,7 @@ object AkkaBookBuild extends Build {
       organization := "com.neosavvy",
       version := "0.1-SNAPSHOT",
       scalaVersion := "2.10.0",
-      scalacOptions ++= Seq("-feature", "-deprecation"),
+      scalacOptions ++= Seq("-feature", "-deprecation",  "-no-specialization"),
       resolvers += "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases",
       libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.1.0",
 

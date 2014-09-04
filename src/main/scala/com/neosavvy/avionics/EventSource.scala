@@ -22,7 +22,7 @@ trait ProductionEventSource extends EventSource { this: Actor =>
 
   var listeners = Vector.empty[ActorRef]
 
-  def sendEvent[T](event:T):Unit = listeners foreach {
+  def sendEvent[T](event:T) : Unit = listeners foreach {
     _ ! event
   }
 
